@@ -1,0 +1,88 @@
+
+INSERT INTO [Identity].[dbo].[Permissions]
+(
+    [Code],[Name],[CreatedAt],[UpdatedAt],[StatusId],[CreatedBy],[UpdatedBy]
+)
+VALUES
+('ReadCourierPermissions','Read Courier Permissions',GETDATE(), NULL, 1,NULL, NULL),
+('CreateCourierPermissions','Create Courier Permissions',GETDATE(), NULL, 1,NULL, NULL),
+('ModifyCourierPermissions','Modify Courier Permissions',GETDATE(), NULL, 1,NULL, NULL),
+('RemoveCourierPermissions','Remove Courier Permissions',GETDATE(), NULL, 1,NULL, NULL),
+('ActivateCourierPermissions','Activate Courier Permissions',GETDATE(), NULL, 1,NULL, NULL),
+('DeactivateCourierPermissions','Deactivate Courier Permissions',GETDATE(), NULL, 1,NULL, NULL),
+('ExportCourierAsCsvPermissions','Export Courier As Csv Permissions',GETDATE(), NULL, 1,NULL, NULL),
+('DownloadCourierTemplate','Download Courier Template',GETDATE(), NULL, 1,NULL, NULL),
+('ImportCouriers','Impotort Couriers',GETDATE(),NULL,1,NULL, NULL);
+
+INSERT INTO [Identity].[dbo].[RolePermissions]("RoleId", "PermissionId",  "CreatedAt", "StatusId")
+VALUES(1,(select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%ReadCourierPermissions%'),GETDATE(),1);
+
+INSERT INTO [Identity].[dbo].[RolePermissions]("RoleId", "PermissionId",  "CreatedAt", "StatusId")
+VALUES(1,(select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%CreateCourierPermissions%'),GETDATE(),1);
+
+INSERT INTO [Identity].[dbo].[RolePermissions]("RoleId", "PermissionId",  "CreatedAt", "StatusId")
+VALUES(1,(select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%ModifyCourierPermissions%'),GETDATE(),1);
+
+INSERT INTO [Identity].[dbo].[RolePermissions]("RoleId", "PermissionId",  "CreatedAt", "StatusId")
+VALUES(1,(select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%RemoveCourierPermissions%'),GETDATE(),1);
+
+INSERT INTO [Identity].[dbo].[RolePermissions]("RoleId", "PermissionId",  "CreatedAt", "StatusId")
+VALUES(1,(select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%ActivateCourierPermissions%'),GETDATE(),1);
+
+INSERT INTO [Identity].[dbo].[RolePermissions]("RoleId", "PermissionId",  "CreatedAt", "StatusId")
+VALUES(1,(select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%DeactivateCourierPermissions%'),GETDATE(),1);
+
+INSERT INTO [Identity].[dbo].[RolePermissions]("RoleId", "PermissionId",  "CreatedAt", "StatusId")
+VALUES(1,(select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%ExportCourierAsCsvPermissions%'),GETDATE(),1);
+
+INSERT INTO [Identity].[dbo].[RolePermissions]("RoleId", "PermissionId",  "CreatedAt", "StatusId")
+VALUES(1,(select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%DownloadCourierTemplate%'),GETDATE(),1);
+
+INSERT INTO [Identity].[dbo].[RolePermissions]("RoleId", "PermissionId",  "CreatedAt", "StatusId")
+VALUES(1,(select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%ImportCouriers%'),GETDATE(),1);
+
+
+INSERT INTO [Identity].dbo.UserPermissions
+( UserId, PermissionId, CreatedAt, StatusId)
+VALUES(1, (select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%ReadCourierPermissions%'),
+GETDATE(), 1);
+
+INSERT INTO [Identity].dbo.UserPermissions
+( UserId, PermissionId, CreatedAt, StatusId)
+VALUES(1, (select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%CreateCourierPermissions%'),
+GETDATE(), 1);
+
+INSERT INTO [Identity].dbo.UserPermissions
+( UserId, PermissionId, CreatedAt, StatusId)
+VALUES(1, (select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%ModifyCourierPermissions%'),
+GETDATE(), 1);
+
+INSERT INTO [Identity].dbo.UserPermissions
+( UserId, PermissionId, CreatedAt, StatusId)
+VALUES(1, (select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%RemoveCourierPermissions%'),
+GETDATE(), 1);
+
+INSERT INTO [Identity].dbo.UserPermissions
+( UserId, PermissionId, CreatedAt, StatusId)
+VALUES(1, (select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%ActivateCourierPermissions%'),
+GETDATE(), 1);
+
+INSERT INTO [Identity].dbo.UserPermissions
+( UserId, PermissionId, CreatedAt, StatusId)
+VALUES(1, (select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%DeactivateCourierPermissions%'),
+GETDATE(), 1);
+
+INSERT INTO [Identity].dbo.UserPermissions
+( UserId, PermissionId, CreatedAt, StatusId)
+VALUES(1, (select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%ExportCourierAsCsvPermissions%'),
+GETDATE(), 1);
+
+INSERT INTO [Identity].dbo.UserPermissions
+( UserId, PermissionId, CreatedAt, StatusId)
+VALUES(1, (select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%DownloadCourierTemplate%'),
+GETDATE(), 1);
+
+INSERT INTO [Identity].dbo.UserPermissions
+( UserId, PermissionId, CreatedAt, StatusId)
+VALUES(1, (select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%ImportCouriers%'),
+GETDATE(), 1);

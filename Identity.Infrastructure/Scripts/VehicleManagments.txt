@@ -1,0 +1,68 @@
+
+INSERT INTO [Identity].[dbo].[Permissions]
+(
+    [Code],
+    [Name],
+    [CreatedAt],
+    [UpdatedAt],
+    [StatusId],
+    [CreatedBy],
+    [UpdatedBy]
+)
+VALUES
+(
+    'ReadVehicleManagments',
+    'Read Vehicle Managments',
+     GETDATE(),
+    NULL,
+    1,
+    NULL,
+    NULL
+),
+(
+    'CreateVehicleManagments',
+    'Create Vehicle Managments',
+     GETDATE(),
+    NULL,
+    1,
+    NULL,
+    NULL
+),
+(
+    'ModifyVehicleManagments',
+    'Modify Vehicle Managments',
+     GETDATE(),
+    NULL,
+    1,
+    NULL,
+    NULL
+),
+(
+    'RemoveVehicleManagments',
+    'Remove Vehicle Managments',
+     GETDATE(),
+    NULL,
+    1,
+    NULL,
+    NULL
+);
+
+INSERT INTO [Identity].[dbo].[RolePermissions]("RoleId", "PermissionId",  "CreatedAt", "StatusId")
+VALUES(
+    1
+    ,(select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%ReadVehicleManagments%'),   GETDATE(), 1);
+
+INSERT INTO [Identity].[dbo].[RolePermissions]("RoleId", "PermissionId",  "CreatedAt", "StatusId")
+VALUES(
+    1
+    ,(select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%CreateVehicleManagments%'),   GETDATE(), 1);
+
+INSERT INTO [Identity].[dbo].[RolePermissions]("RoleId", "PermissionId",  "CreatedAt", "StatusId")
+VALUES(
+    1
+    ,(select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%ModifyVehicleManagments%'),   GETDATE(), 1);
+
+INSERT INTO [Identity].[dbo].[RolePermissions]("RoleId", "PermissionId",  "CreatedAt", "StatusId")
+VALUES(
+    1
+    ,(select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%RemoveVehicleManagments%'),   GETDATE(), 1);

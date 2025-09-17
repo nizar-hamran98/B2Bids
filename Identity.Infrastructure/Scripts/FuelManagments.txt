@@ -1,0 +1,40 @@
+
+INSERT INTO [Identity].[dbo].[Permissions]
+(
+    [Code],
+    [Name],
+    [CreatedAt],
+    [UpdatedAt],
+    [StatusId],
+    [CreatedBy],
+    [UpdatedBy]
+)
+VALUES
+(
+    'ReadVehicleFuels',
+    'Read Vehicle Fuels',
+     GETDATE(),
+    NULL,
+    1,
+    NULL,
+    NULL
+),
+(
+    'CreateVehicleFuels',
+    'Create Vehicle Fuels',
+     GETDATE(),
+    NULL,
+    1,
+    NULL,
+    NULL
+);
+
+INSERT INTO [Identity].[dbo].[RolePermissions]("RoleId", "PermissionId",  "CreatedAt", "StatusId")
+VALUES(
+    1
+    ,(select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%ReadVehicleFuels%'),   GETDATE(), 1);
+
+INSERT INTO [Identity].[dbo].[RolePermissions]("RoleId", "PermissionId",  "CreatedAt", "StatusId")
+VALUES(
+    1
+    ,(select dm."Id"  from [Identity].[dbo].[Permissions] dm where dm."Code" like '%CreateVehicleFuels%'),   GETDATE(), 1);
