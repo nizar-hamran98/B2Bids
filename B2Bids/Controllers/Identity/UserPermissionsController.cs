@@ -30,6 +30,7 @@ public class UserPermissionsController(IMediator _mediator) : ControllerBase
         return result;
     }
 
+
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
