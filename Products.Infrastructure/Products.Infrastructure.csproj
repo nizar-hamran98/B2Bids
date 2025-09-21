@@ -22,7 +22,6 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MappingConfigurations\" />
     <Folder Include="Migrations\" />
     <Folder Include="Scripts\" />
   </ItemGroup>

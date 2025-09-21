@@ -1,5 +1,6 @@
 using Identity.Application;
 using Microsoft.OpenApi.Models;
+using Products.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,6 +44,9 @@ builder.Services.AddSwaggerGen(swagger =>
 
 // Identity
 builder.Services.AddIdentityModuleCore();
+//Product
+builder.Services.AddProductModuleCore();
+
 
 var app = builder.Build();
 

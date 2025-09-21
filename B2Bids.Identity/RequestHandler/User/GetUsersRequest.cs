@@ -9,7 +9,7 @@ public class GetUsersRequest : IRequest<IEnumerable<UserModel>>
 {
 }
 
-public class GetUsersRequestHandler(Dispatcher dispatcher) : IRequestHandler<GetUsersRequest, IEnumerable<UserModel>>
+internal sealed class GetUsersRequestHandler(Dispatcher dispatcher) : IRequestHandler<GetUsersRequest, IEnumerable<UserModel>>
 {
     public async Task<IEnumerable<UserModel>> Handle(GetUsersRequest request, CancellationToken cancellationToken)
     {

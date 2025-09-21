@@ -10,15 +10,11 @@ public class AuthenticateQuery : IQuery<User>
     public required AuthenticationModel entity { get; set; }
     public bool AsNoTracking { get; set; }
 
-    public class AuthenticateQueryHandler : IQueryHandler<AuthenticateQuery, User>
+    public class AuthenticateQueryHandler(IRepositoryBase<User> authenticationRepository) : IQueryHandler<AuthenticateQuery, User>
     {
-        private readonly IRepositoryBase<User> _authenticationRepository;
-
-        public AuthenticateQueryHandler(IRepositoryBase<User> authenticationRepository) => _authenticationRepository = authenticationRepository;
-
         public Task<User> Handle(AuthenticateQuery query, CancellationToken cancellationToken = default)
         {
-            var db = _authenticationRepository.GetAll()
+            var db = authenticationRepository.GetAll()
             .Include(item => item.Role)
                 .ThenInclude(item => item.RolePermissions)
                     .ThenInclude(item => item.Permission)
@@ -35,7 +31,7 @@ public class AuthenticateQuery : IQuery<User>
                 db = db.AsNoTracking();
             }
 
-            return _authenticationRepository.FirstOrDefaultAsync(db.Where(x => (x.UserName == query.entity.UserName || x.Email == query.entity.UserName) && x.PasswordHash == query.entity.Password));
+            return authenticationRepository.FirstOrDefaultAsync(db.Where(x => (x.UserName == query.entity.UserName || x.Email == query.entity.UserName) && x.PasswordHash == query.entity.Password));
 
         }
     }

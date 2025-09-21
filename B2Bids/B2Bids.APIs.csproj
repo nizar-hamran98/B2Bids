@@ -27,6 +27,8 @@
     <ProjectReference Include="..\Identity.Domain\Identity.Domain.csproj" />
     <ProjectReference Include="..\Identity.Infrastructure\Identity.Infrastructure.csproj" />
     <ProjectReference Include="..\Notification\Notification.Application.csproj" />
+    <ProjectReference Include="..\Products.Domain\Products.Domain.csproj" />
+    <ProjectReference Include="..\Products.Infrastructure\Products.Infrastructure.csproj" />
     <ProjectReference Include="..\Products\Products.Application.csproj" />
   </ItemGroup>
 
@@ -47,7 +49,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\Stores\" />
-    <Folder Include="Controllers\Products\" />
   </ItemGroup>
 
 </Project>

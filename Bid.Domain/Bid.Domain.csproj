@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+	<ItemGroup>
+		<PackageReference Include="MediatR" Version="13.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Identity.Core" Version="9.0.9" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Kernel\Kernel.csproj" />
+	</ItemGroup>
+
 </Project>

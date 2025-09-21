@@ -9,15 +9,11 @@ public sealed class UserLoginQuery : IQuery<UserLogin>
     public string? RefreshToken { get; set; }
     public long? UserId { get; set; }
 
-    public class UserLoginQueryHandler : IQueryHandler<UserLoginQuery, UserLogin>
+    public class UserLoginQueryHandler(IRepositoryBase<UserLogin> userLoginRepository) : IQueryHandler<UserLoginQuery, UserLogin>
     {
-        private readonly IRepositoryBase<UserLogin> _userLoginRepository;
-
-        public UserLoginQueryHandler(IRepositoryBase<UserLogin> userLoginRepository) => _userLoginRepository = userLoginRepository;
-
         public async Task<UserLogin> Handle(UserLoginQuery query, CancellationToken cancellationToken = default)
         {
-            IQueryable<UserLogin> userLogin = _userLoginRepository
+            IQueryable<UserLogin> userLogin = userLoginRepository
                     .GetAll()
                     .AsNoTracking();
 

@@ -11,4 +11,6 @@ public class Store : BaseEntity
     public List<byte[]>? StoreRegNoImage { get; set; }
     public bool IsAuthenticated { get; set; } = false;
     public StoreType StoreType { get; set; }
+    public long StoreAddressId { get; set; }
+    //public StoreAddress StoreAddress { get; set; }
 }
