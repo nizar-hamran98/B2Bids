@@ -8,9 +8,9 @@ public class Store : BaseEntity
     public string? Description { get; set; }
     public byte[]? Logo { get; set; }
     public string? StoreRegNo { get; set; }
-    public List<byte[]>? StoreRegNoImage { get; set; }
+    public List<string>? StoreRegNoImage { get; set; }
     public bool IsAuthenticated { get; set; } = false;
     public StoreType StoreType { get; set; }
     public long StoreAddressId { get; set; }
-    //public StoreAddress StoreAddress { get; set; }
+    public StoreAddress? StoreAddress { get; set; }
 }

@@ -1,6 +1,7 @@
 using Identity.Application;
 using Microsoft.OpenApi.Models;
 using Products.Application;
+using Stores.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,10 +43,12 @@ builder.Services.AddSwaggerGen(swagger =>
                 });
 });
 
-// Identity
+//Identity
 builder.Services.AddIdentityModuleCore();
 //Product
 builder.Services.AddProductModuleCore();
+//Store
+builder.Services.AddStoreModuleCore();
 
 
 var app = builder.Build();
