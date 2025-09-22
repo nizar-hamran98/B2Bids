@@ -4,7 +4,7 @@ using Products.Domain.Models;
 using SharedKernel;
 using Products.Domain.Mapping;
 
-namespace Products.Application.RequestHandler.Category;
+namespace Products.Application.RequestHandler;
 public class GetCategoryByRequest : IRequest<CategoryModel>
 {
     public long? Id { get; set; }

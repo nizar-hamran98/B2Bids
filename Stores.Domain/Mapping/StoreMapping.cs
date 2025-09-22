@@ -1,4 +1,5 @@
-﻿using Stores.Domain.Entities;
+﻿using SharedKernel;
+using Stores.Domain.Entities;
 using Stores.Domain.Models;
 
 namespace Stores.Domain.Mapping;
@@ -20,6 +21,7 @@ public static class StoreMapping
                 IsAuthenticated = entity.IsAuthenticated,
                 StoreAddressId = entity.StoreAddressId,
                 StoreAddress = entity.StoreAddress,
+                Status = (EntityStatus)entity.StatusId,
                 StoreType = entity.StoreType,
                 CreatedAt = entity.CreatedAt,
                 CreatedBy = entity.CreatedBy,

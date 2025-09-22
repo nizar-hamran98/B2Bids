@@ -1,3 +1,4 @@
+using Bid.Application;
 using Identity.Application;
 using Microsoft.OpenApi.Models;
 using Products.Application;
@@ -10,8 +11,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApi();
-//builder.Services.AddSwaggerGen();
-
 builder.Services.AddSwaggerGen(swagger =>
 {
     swagger.SwaggerDoc("v1", new OpenApiInfo { Title = "B2Bids Api ", Version = "v1" });
@@ -48,7 +47,9 @@ builder.Services.AddIdentityModuleCore();
 //Product
 builder.Services.AddProductModuleCore();
 //Store
-builder.Services.AddStoreModuleCore();
+//builder.Services.AddStoreModuleCore();
+////Store
+//builder.Services.AddBidModuleCore();
 
 
 var app = builder.Build();

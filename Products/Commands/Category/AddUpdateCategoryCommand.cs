@@ -11,11 +11,18 @@ public class AddUpdateCategoryCommandHandler(IRepositoryBase<Category> repo, IUn
 {
     public  async Task Handle(AddUpdateCategoryCommand command, CancellationToken cancellationToken = default)
     {
-        if (command.Category.Id > 0)
-            await repo.UpdateAsync(command.Category);
-        else
-            await repo.AddAsync(command.Category);
+        try
+        {
+            if (command.Category.Id > 0)
+                await repo.UpdateAsync(command.Category);
+            else
+                await repo.AddAsync(command.Category);
 
-        await unitOfWork.SaveChanges(cancellationToken);
+            await unitOfWork.SaveChanges(cancellationToken);
+        }
+        catch(Exception ex)
+        {
+            var test = "";
+        }
     }
 }
