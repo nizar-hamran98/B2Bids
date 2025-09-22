@@ -1,5 +1,4 @@
-﻿using Kernel.Enums;
-using SharedKernel;
+﻿using SharedKernel;
 
 namespace Products.Domain.Entities;
 public class Product : BaseEntity
@@ -8,6 +7,11 @@ public class Product : BaseEntity
     public decimal Price { get; set; }
     public DateTimeOffset ExpiresIn { get; set; }
     public string Description { get; set; }
-    public List<byte[]> Images { get; set; }
-    public ProductCategory Category { get; set; }
+    public List<string> Images { get; set; } // url
+    public long CategoryId { get; set; }
+    //public Category Category { get; set; }
+    public long StoreId { get; set; }
+    //public string StoreName { get; set; }
+    //public string StoreLogo { get; set; }
+
 }

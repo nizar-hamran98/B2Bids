@@ -26,6 +26,20 @@ public static class ServiceCollectionExtensions
         services.AddHttpContextAccessor();
     }
 
+    public static void AddSharedRegistrationsWithoutPermissions(this IServiceCollection services, Assembly assembly = null)
+    {
+        //services.AddAuthentications();
+        //services.AddApiKeyAuthentication();
+        services.AddAuthorizationPermissions();
+        services.AddSingleton<IHttpContext, HttpContext>();
+        services.AddScoped<Dispatcher>();
+        DomainEvents.RegisterHandlers(assembly, services);
+        services.AddScoped<IDomainEvents, DomainEvents>();
+        services.AddCQRSHandlers(assembly);
+        services.AddHttpClient();
+        services.AddHttpContextAccessor();
+    }
+
     private static void AddAuthentications(this IServiceCollection services)
     {
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
