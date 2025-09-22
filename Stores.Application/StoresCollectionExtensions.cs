@@ -11,7 +11,7 @@ public static class StoresCollectionExtensions
 {
     public static IServiceCollection AddStoreModuleCore(this IServiceCollection services)
     {
-        services.AddAppSettingsConfiguration();
+        //services.AddAppSettingsConfiguration();
         services.AddSharedRegistrationsWithoutPermissions(typeof(StoresCollectionExtensions).Assembly);
 
         services.RegisterPersistence();

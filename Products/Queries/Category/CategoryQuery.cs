@@ -27,5 +27,4 @@ public class CategoryQuery : IQuery<IEnumerable<Category>>
             return await result.ToListAsync();
         }
     }
-
 }

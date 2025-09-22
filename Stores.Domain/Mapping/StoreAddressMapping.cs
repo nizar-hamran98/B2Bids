@@ -1,4 +1,5 @@
-﻿using Stores.Domain.Entities;
+﻿using SharedKernel;
+using Stores.Domain.Entities;
 using Stores.Domain.Models;
 
 namespace Stores.Domain.Mapping;
@@ -17,6 +18,7 @@ public static class StoreAddressMapping
                 Address = entity.Address,
                 Longitude = entity.Longitude,
                 Latitude = entity.Latitude,
+                Status = (EntityStatus)entity.StatusId,
                 CreatedAt = entity.CreatedAt,
                 CreatedBy = entity.CreatedBy,
                 UpdatedAt = entity.UpdatedAt,
@@ -35,6 +37,7 @@ public static class StoreAddressMapping
             Address = model.Address,
             Longitude = model.Longitude,
             Latitude = model.Latitude,
+            StatusId = (short)model.Status,
         };
     }
 

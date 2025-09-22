@@ -1,15 +1,12 @@
 ﻿using SharedKernel;
 
 namespace Bid.Domain.Models;
-public class ProductBidsModel
+public class BiddingModel
 {
     public long Id { get; set; }
-    public decimal InitialBid { get; set; }
-    public decimal LastBid { get; set; }
-    public long WinnerId { get; set; } // user id
-    public int TotalOfBids { get; set; }
-    public DateTimeOffset EndBidDate { get; set; }
-    public List<long> ListOfBidders { get; set; } // user ids
+    public long ProductId { get; set; }
+    public decimal BidPrice { get; set; }
+    public long BidderId { get; set; } // user id
     public string? CreatedBy { get; set; }
     public string? UpdatedBy { get; set; }
     public DateTimeOffset? CreatedAt { get; set; }
