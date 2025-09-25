@@ -1,4 +1,5 @@
 using Bid.Application;
+using DatabaseConnections;
 using Identity.Application;
 using Microsoft.OpenApi.Models;
 using Products.Application;
@@ -42,15 +43,12 @@ builder.Services.AddSwaggerGen(swagger =>
                 });
 });
 
-//Identity
 builder.Services.AddIdentityModuleCore();
-//Product
 builder.Services.AddProductModuleCore();
-//Store
-//builder.Services.AddStoreModuleCore();
-////Store
-//builder.Services.AddBidModuleCore();
+builder.Services.AddStoreModuleCore();
+builder.Services.AddBidModuleCore();
 
+builder.Services.AddB2BidsModuleCore();
 
 var app = builder.Build();
 

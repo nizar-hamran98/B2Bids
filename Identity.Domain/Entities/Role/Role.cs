@@ -4,9 +4,11 @@ namespace Identity.Domain.Entities;
 public class Role : BaseEntity
 {
     public string Name { get; set; }
+    public long? StoreId { get; set; }
+    public string? StoreName { get; set; }
     public string Description { get; set; } 
-    public  IList<RolePermissions> RolePermissions { get; set; }
-    public  IList<UserRole> UserRoles { get; set; }
+    public  IList<RolePermissions>? RolePermissions { get; set; }
+    //public  IList<UserRole>? UserRoles { get; set; }
     public int? ParentId { get; set; }
     public bool IsDefault { get; set; } = false;
 

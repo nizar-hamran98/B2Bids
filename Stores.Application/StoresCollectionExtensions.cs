@@ -19,7 +19,7 @@ public static class StoresCollectionExtensions
         services.AddValidatorsFromAssembly(typeof(StoresCollectionExtensions).Assembly);
         services.AddMediatorCoordinator([typeof(StoresCollectionExtensions).Assembly]);
 
-        services.AddDbContext<StoreDbContext>();
+        //services.AddDbContext<StoreDbContext>();
         return services;
     }
     public static void AddAppSettingsConfiguration(this IServiceCollection services)
