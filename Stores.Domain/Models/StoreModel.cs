@@ -11,7 +11,7 @@ public class StoreModel
     public byte[]? Logo { get; set; } // needs to be changes
     public string? StoreRegNo { get; set; }
     public List<string>? StoreRegNoImage { get; set; } // needs to be changes
-    public bool IsAuthenticated { get; set; } = false;
+    public bool? IsAuthenticated { get; set; } = false;
     public StoreType StoreType { get; set; }
     public long StoreAddressId { get; set; }
     public StoreAddress? StoreAddress { get; set; }

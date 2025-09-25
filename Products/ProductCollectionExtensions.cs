@@ -19,7 +19,7 @@ public static class ProductCollectionExtensions
         services.AddValidatorsFromAssembly(typeof(ProductCollectionExtensions).Assembly);
         services.AddMediatorCoordinator([typeof(ProductCollectionExtensions).Assembly]);
 
-        services.AddDbContext<ProductDbContext>();
+        //services.AddDbContext<ProductDbContext>();
         return services;
     }
     public static void AddAppSettingsConfiguration(this IServiceCollection services)

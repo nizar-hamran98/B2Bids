@@ -19,7 +19,7 @@ public static class BidsCollectionExtensions
         services.AddValidatorsFromAssembly(typeof(BidsCollectionExtensions).Assembly);
         services.AddMediatorCoordinator([typeof(BidsCollectionExtensions).Assembly]);
 
-        services.AddDbContext<BidDbContext>();
+        //services.AddDbContext<BidDbContext>();
         return services;
     }
     public static void AddAppSettingsConfiguration(this IServiceCollection services)

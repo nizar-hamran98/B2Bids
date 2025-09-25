@@ -18,7 +18,7 @@ public static class StoreMapping
                 Logo = entity.Logo,
                 StoreRegNo = entity.StoreRegNo,
                 StoreRegNoImage = entity.StoreRegNoImage,
-                IsAuthenticated = entity.IsAuthenticated,
+                IsAuthenticated = (bool?)entity.IsAuthenticated,
                 StoreAddressId = entity.StoreAddressId,
                 StoreAddress = entity.StoreAddress,
                 Status = (EntityStatus)entity.StatusId,

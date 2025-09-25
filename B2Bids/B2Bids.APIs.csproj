@@ -27,6 +27,7 @@
   <ItemGroup>
     <ProjectReference Include="..\B2Bids.Identity\Identity.Application.csproj" />
     <ProjectReference Include="..\Bid\Bid.Application.csproj" />
+    <ProjectReference Include="..\DatabaseConnections\DatabaseConnections.csproj" />
     <ProjectReference Include="..\Identity.Domain\Identity.Domain.csproj" />
     <ProjectReference Include="..\Identity.Infrastructure\Identity.Infrastructure.csproj" />
     <ProjectReference Include="..\Notification\Notification.Application.csproj" />

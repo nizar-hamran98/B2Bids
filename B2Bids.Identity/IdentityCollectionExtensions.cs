@@ -19,7 +19,7 @@ public static class IdentityCollectionExtensions
         services.AddValidatorsFromAssembly(typeof(IdentityCollectionExtensions).Assembly);
         services.AddMediatorCoordinator([typeof(IdentityCollectionExtensions).Assembly]);  
 
-        services.AddDbContext<IdentityDbContext>();
+        //services.AddDbContext<IdentityDbContext>();
         return services;
     }
     public static void AddAppSettingsConfiguration(this IServiceCollection services)
